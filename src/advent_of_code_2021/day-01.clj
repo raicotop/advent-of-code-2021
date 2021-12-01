@@ -8,8 +8,8 @@
 (defn solution-1
   [vals]
   (->> (partition 2 1 vals)
-       (map (fn [[a b]] (if (> b a) 1 0)))
-       (reduce +)))
+       (filter (fn [[a b]] (> b a)))
+       (count)))
 
 (defn solution-2
   [vals]
